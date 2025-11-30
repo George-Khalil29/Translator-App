@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Translator App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- LOGGED-IN USER INFO -->
+    <div style="color:white; margin-bottom:10px; font-size:18px;">
+        <span id="userInfo"></span>
+        <button id="logoutBtn" style="
+            background:#E63946; 
+            border:none; 
+            padding:8px 12px; 
+            border-radius:5px; 
+            cursor:pointer; 
+            color:white;
+        ">Logout</button>
+    </div>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="text-input">
+                <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
+                <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+            </div>
+            <ul class="controls">
+                <li class="row from">
+                    <div class="icons">
+                        <i id="from" class="fas fa-volume-up"></i>
+                        <i id="from" class="fas fa-copy"></i>
+                    </div>
+                    <select></select>
+                </li>
+                <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+                <li class="row to">
+                    <select></select>
+                    <div class="icons">
+                        <i id="to" class="fas fa-volume-up"></i>
+                        <i id="to" class="fas fa-copy"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button>Translate Text</button>
+    </div>
+
+    <script src="js/countries.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

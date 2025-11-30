@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-        <meta name="description" content="Translator App" />
-        <meta name="author" content="George, Khalil" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="manifest" href="manifest.json" /> <!-- Added web app manifest -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <title>Translator App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translator Login System</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="wrapper">
-            <div class="text-input">
-                <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
-                <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
-            </div>
-            <ul class="controls">
-                <li class="row from">
-                    <div class="icons">
-                        <i id="from" class="fas fa-volume-up"></i>
-                        <i id="from" class="fas fa-copy"></i>
-                    </div>
-                    <select></select>
-                </li>
-                <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
-                <li class="row to">
-                    <select></select>
-                    <div class="icons">
-                        <i id="to" class="fas fa-volume-up"></i>
-                        <i id="to" class="fas fa-copy"></i>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <button>Translate Text</button>
+
+<div id="authContainer" class="auth-container">
+
+    <div id="loginBox" class="box">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button type="submit">Login</button>
+        </form>
+        <p>No account? <span id="goSignup">Sign up</span></p>
     </div>
 
-    <script src="js/countries.js"></script>
-    <script src="js/script.js"></script>
+    <div id="signupBox" class="box hidden">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" id="signupName" placeholder="Name" />
+            <input type="email" id="signupEmail" placeholder="Email" />
+            <input type="password" id="signupPassword" placeholder="Password" />
+            <button type="submit">Create Account</button>
+        </form>
+        <p>Have an account? <span id="goLogin">Login</span></p>
+    </div>
+
+</div>
+
+<!-- TRANSLATOR APP -->
+<div id="app" class="hidden">
+    <h1>Translator App</h1>
+    <textarea id="textInput"></textarea>
+    <button id="btnTranslate">Translate</button>
+
+    <h2>Output:</h2>
+    <div id="outputBox"></div>
+
+    <button id="logoutBtn">Logout</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
